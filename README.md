@@ -6,18 +6,20 @@ The data set is from Kaggle and contains data about reviews from Women’s Cloth
 
 ## Introduction
 
-This data set includes 23486 rows and 10 feature variables. Each row corresponds to a customer review. As mentioned in the Overview section on the Kaggle website, the dataset contains the following variables:
+This data set includes 23486 rows and 10 feature variables. Each row corresponds to a customer review. <br>As mentioned in the Overview section on the Kaggle website, the dataset contains the following variables:
 
-Clothing ID
-Age (of the reviewer)
-Title (of review)
-Review
-Rating (out of 5-stars)
-Recommendation index (i.e. whether customer would recommend this product to others: yes= 1/no = 0 )
-Positive Feedback Count (the number of readers who found the review useful)
-Division name (e.g. General Petite, Intimates)
-Department name (e.g. Jackets, Tops, Bottoms)
-Class name (e.g. Blouses, Pants, Skirts, Swim, Knits)
+<ul>
+  <li>Clothing ID</li>
+  <li>Age (of the reviewer)</li>
+  <li>Title (of review)</li>
+  <li>Review</li>
+  <li>Rating (out of 5-stars)</li>
+  <li>Recommendation index (i.e. whether customer would recommend this product to others: yes= 1/no = 0 )</li>
+  <li>Positive Feedback Count (the number of readers who found the review useful)</li>
+  <li>Division name (e.g. General Petite, Intimates)</li>
+  <li>Department name (e.g. Jackets, Tops, Bottoms)</li>
+  <li>Class name (e.g. Blouses, Pants, Skirts, Swim, Knits)</li>
+ </ul> 
 
 ## Column Details
 
