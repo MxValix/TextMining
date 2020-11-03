@@ -1,4 +1,4 @@
-# librerie per connettermi al database postgre 
+# librerie per connettermi al database postgres 
 library(DBI)
 library(RPostgreSQL)
 library(odbc)
