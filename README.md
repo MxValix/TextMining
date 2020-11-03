@@ -4,9 +4,23 @@ Review text and based on it how it impacts the customer decision to recommend th
 The data set is from Kaggle and contains data about reviews from Women’s Clothing E-Commerce written by customers.
 </p>
 
-# Column Details
+## Introduction
 
-This data set includes 23486 rows and 10 feature variables. Each row corresponds to a customer review, and includes the variables:
+This data set includes 23486 rows and 10 feature variables. Each row corresponds to a customer review. As mentioned in the Overview section on the Kaggle website, the dataset contains the following variables:
+
+Clothing ID
+Age (of the reviewer)
+Title (of review)
+Review
+Rating (out of 5-stars)
+Recommendation index (i.e. whether customer would recommend this product to others: yes= 1/no = 0 )
+Positive Feedback Count (the number of readers who found the review useful)
+Division name (e.g. General Petite, Intimates)
+Department name (e.g. Jackets, Tops, Bottoms)
+Class name (e.g. Blouses, Pants, Skirts, Swim, Knits)
+
+## Column Details
+
 <ol>
   <li> Clothing ID: Integer Categorical variable that refers to the specific piece being reviewed. </li>
   <li> Age: Positive Integer variable of the reviewers age. </li>
