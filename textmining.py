@@ -1,16 +1,7 @@
-import matplotlib.pyplot as plt
 import pandas as pd
-
-def age_plot():
-    x = df['Clothing ID']
-    y = df['Age']
-    plt.plot(x, y, 'bo')
-    plt.title('Età per prodotto')
-    plt.xlabel('IdProdotto')
-    plt.ylabel('Età')
-    plt.legend(['Age'])
-    plt.show()
-
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
 
 if __name__ == '__main__':
     excel_name = 'textmining.xlsx'
@@ -32,30 +23,39 @@ if __name__ == '__main__':
     df.groupby('Clothing ID')['Rating'].std()
     df['Clothing ID'].unique()
     pd.unique(df['Clothing ID']).tolist()
-    age_plot()
+
+    plt.figure(figsize=(15, 15))
+    df.groupby(['Department Name', pd.cut(df['Age'], np.arange(0, 100, 10))]) \
+        .size() \
+        .unstack(0) \
+        .plot.bar(stacked=True)
+    plt.show()
+
+    z = df.groupby(by=['Department Name'], as_index=False).count().sort_values(by='Class Name', ascending=False)
+
+    plt.figure(figsize=(10, 10))
+    sns.set_style("whitegrid")
+    ax = sns.barplot(x=z['Department Name'], y=z['Class Name'], data=z, palette='plasma')
+    plt.xlabel("Department Name")
+    plt.ylabel("Count")
+    plt.title("Counts Vs Department Name")
+    plt.show()
+
+
+    x = df['Clothing ID']
+    y = df['Age']
+
+    plt.plot(x, y, 'bo')
+    plt.title('Età per prodotto')
+    plt.xlabel('IdProdotto')
+    plt.ylabel('Età')
+
+    plt.show()
 
     df.groupby('Clothing ID')['Rating'].std()
 
     df['Age'].plot(kind='hist', color='teal')
     department_name = df['Department Name']
-
-    frequency = df['Department Name'].value_counts()
-    print("Frequenza department:\n", frequency)
-    print(df['Department Name'].count(), " tot. dipartimento")
-
-    frequency = df['Class Name'].value_counts()
-    print("Frequenza class name:\n", frequency)
-    print(df['Class Name'].count(), " tot. class name")
-
-    # valutazioni da 1 a 5, valutazione migliore in base alla macrocategoria
-    #rating_mean = df.groupby('Department Name')['Rating'].mean()
-
-    #dipartimento = rating_mean[0]
-    #valutazione = rating_mean[1]
-
-    #plt.plot(dipartimento,valutazione)
-    #plt.show()
-
 
     # creating initial dataframe
     department_df = pd.DataFrame(department_name, columns=['Department Name'])
@@ -63,15 +63,22 @@ if __name__ == '__main__':
     department_df['department_name'] = department_df['Department Name'].astype('category')
     # Assigning numerical values and storing in another column
     department_df['department_name_ID'] = department_df['department_name'].cat.codes
-    print(department_df, " dipartimento ID")
-    y = df['Clothing ID']
-    x = department_df['department_name_ID']
-    department_final = department_df.groupby('department_name')['department_name_ID']
+    print(department_df)
+
+    x = df['Clothing ID']
+    y = department_df['department_name_ID']
+
     plt.plot(x, y, 'bo')
-    plt.title('Dipartimento')
-    plt.xlabel('Nome dipartimento')
-    plt.ylabel('idProdotto')
-    plt.xlim([15, 100])
-    plt.legend(['line plot 1'])
+    plt.title('Dipartimento ')
+    plt.xlabel('IdProdotto')
+    plt.ylabel('Dipartimento')
+    plt.xlim([15,90])
     plt.show()
+
+    df.groupby(['Rating', pd.cut(df['Age'], np.arange(0, 100, 10))]) \
+        .size() \
+        .unstack(0) \
+        .plot.bar(stacked=True)
+    plt.show()
+
 
