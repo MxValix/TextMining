@@ -98,7 +98,3 @@ if __name__ == '__main__':
     counts_department_plot()
     rating_age_plot()
     department_productid()
-
-
-
-
