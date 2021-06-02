@@ -29,7 +29,7 @@ ggplot(aes(x=Age,y=N, col=recommended)) +
   geom_smooth(method = "lm")
 
 
-# 2. Ratings - Number of Reviewers by Rating ####
+# 2. Ratings - Number of Reviewers by Rating ###
 
 data %>% 
   group_by(Age, Rating) %>% 
